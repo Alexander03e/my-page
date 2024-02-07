@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import "./css/style.css";
+import { ProjectList } from "./components/ProjectList";
 function App() {
   const [skills, setSkills] = React.useState([
     {
@@ -67,7 +68,7 @@ function App() {
                   frontend programmer
                   <br />
                   work experience:
-                  <strong className="section-title">
+                  <strong className="">
                     {` ${Math.floor(
                       (Date.now() - startDate.getTime()) / (1000 * 3600 * 24)
                     )} days`}
@@ -82,11 +83,7 @@ function App() {
             <img
               onClick={changeTheme}
               className="theme-switch"
-              src={
-                theme == "light"
-                  ? "./src/assets/dark.png"
-                  : "./src/assets/light.png"
-              }
+              src={theme == "light" ? "./dark.png" : "./light.png"}
               alt="dark-mode "
             />
           </div>
@@ -94,16 +91,9 @@ function App() {
       </header>
       <main className="main">
         <div className="container">
-          {/* <div className="skills wrapper">
-            <h1 className="hidden skill">React</h1>
-            <h1 className="hidden skill">Redux</h1>
-            <h1 className="hidden skill">Javascript</h1>
-          </div>
-        </div>
-        <div className="container">
-          <h1 className="main__title title active"></h1> */}
+          <h1 className="section-title">my frontend stuff:</h1>
+          <br />
 
-          <h1 className="section-title">-- skills --</h1>
           <section className="skills">
             {skills.map((item) => (
               <div className="wrapper">
@@ -115,36 +105,21 @@ function App() {
                     <img className="skills__img" src={item.img} alt="" />
                   </div>
                 </div>
-                <p className="js__describe">
+                <p>
                   {item.describe.map((descItem) => (
                     <p>{descItem}</p>
                   ))}
                 </p>
               </div>
             ))}
-
-            {/* <div className="wrapper active skills__django django">
-              <h1 className="django__title active-item title "></h1>
-              <p className="django__describe "></p>
-              </div>
-              <div className="wrapper active skills_tailwind tailwind">
-              <h1 className="tailwind__title active-item title"></h1>
-              <p className="tailwind__describe hidden"></p>
-              </div>
-              <div className="wrapper active skills_react react hidden">
-              <h1 className="title active-item">[React]</h1>
-              <p>
-              React is a free and open-source front-end JavaScript library for
-              building user interfaces based on components. <br />
-              <br />I have been learning and programming in React since
-              September 2023
-              </p>
-            </div> */}
           </section>
-          <h1 className="section-title">-- works --</h1>
+          <br />
+          <h1 className="section-title">my projects: </h1>
+          <br />
+          <ProjectList />
         </div>
       </main>
-      <footer className="footer hidden">
+      <footer className="footer">
         <p>Since 2023</p>
       </footer>
       <script src="js/script.js"></script>

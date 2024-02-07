@@ -11,17 +11,15 @@ html{
     font-family: 'Source Code Pro';
 }
 
-@mixin words-anim{
-    animation:  0.5s step-end infinite, printed_text 0.5s steps(20);
-    overflow: hidden;
 
-}
-
-body{
+#root{
+    flex-direction: column;
+    display: flex;
     background-color: var(--theme);
 }
 html[data-theme='dark']{
     --theme:#30393e;
+    --second-color: #222222;
     p{
         color:#6690b5;
         
@@ -33,17 +31,31 @@ html[data-theme='dark']{
         color:#6690b5;
     }
     header{
-        background-color: #222222;
+        background-color: var(--second-color);
+    }
+    .section-title {
+        color: var(--second-color);
     }
 }
 html[data-theme='light']{
+    header {
+        background-color: var(--second-color);
+    }
     --theme:white;
+    --second-color: #cfd5e0;
+    .section-title {
+        color: var(--second-color);
+    }
 }
 /* html[] */
 .section-title{
-    margin-top:0.5em;
+    margin-top:0.5em; 
     color: transparent!important;    
 	-webkit-background-clip: text;
 	background-clip: text;
-	background-image: linear-gradient(90deg, rgb(196, 46, 193),rgb(112, 57, 170));
+    text-align: center  ;
+    /* color: var(--second-color) */
+    /* color: darkblue; */
+	background-image: linear-gradient(90deg, rgb(153, 37, 176),rgb(39, 206, 156));
+	
 }
