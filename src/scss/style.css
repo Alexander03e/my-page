@@ -1,0 +1,335 @@
+html {
+  font-family: "Source Code Pro";
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  z-index: 9999;
+  width: 100%;
+  max-width: 410px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 800px;
+  }
+  html {
+    font-size: 1.5em;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1500px;
+  }
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 400;
+}
+
+a:hover {
+  color: darkblue;
+}
+
+.main {
+  margin-top: 4em;
+}
+
+@media screen and (min-width: 1200px) {
+  .skills {
+    margin-top: -4em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+}
+.opened {
+  position: absolute;
+  width: 100%;
+}
+
+.blackout {
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: black;
+  animation: black1 1.5s;
+}
+
+@keyframes black1 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.wrapper {
+  position: relative;
+}
+
+.modalleft {
+  background-color: white;
+  width: 830px;
+  height: 370px;
+  display: block;
+  position: absolute;
+  top: -5vw;
+  animation: viewed 1s forwards;
+}
+
+.modaltop {
+  background-color: white;
+  width: 480px;
+  height: 900px;
+  display: block;
+  position: absolute;
+  top: -50vw;
+  left: 60vw;
+  animation: tview 1s forwards;
+}
+
+@keyframes tview {
+  0% {
+    top: -200vw;
+  }
+  100% {
+    top: -50vw;
+  }
+}
+.el {
+  width: 20px;
+  margin-left: 5px;
+  height: 20px;
+  background-color: blue;
+  position: absolute;
+  z-index: 9999;
+}
+
+.animejs__name {
+  background-color: black;
+  height: 3vw;
+  left: 10vw;
+  margin-left: 10vw;
+  color: white;
+}
+
+@keyframes viewed {
+  0% {
+    left: -100vw;
+  }
+  100% {
+    left: -10vw;
+  }
+}
+.opened h1 {
+  position: absolute;
+}
+
+@keyframes open {
+  0% {
+    text-align: left;
+  }
+  100% {
+    background-color: #f7e018;
+    text-align: center;
+  }
+}
+.me__name {
+  animation: hello 0.45s;
+}
+
+.me__info {
+  animation: hello 0.55s;
+}
+
+@keyframes hello {
+  0% {
+    transform: translateX(-500px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.main__title {
+  margin-top: 1em;
+  width: 100%;
+}
+
+.skills h1 {
+  font-weight: 500;
+}
+
+.visible {
+  visibility: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 900px;
+  word-break: break-all;
+  margin-top: 3em;
+}
+
+.wrapper p {
+  word-wrap: break-word;
+}
+
+.contact {
+  margin-top: 6em;
+  margin-bottom: 5em;
+}
+.contact form {
+  margin-top: 4em;
+}
+
+.contact__form {
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+}
+
+.input-email {
+  padding: 1em 2em;
+}
+
+.input-text {
+  padding: 2em;
+}
+
+.btn {
+  padding: 1em 2em;
+  width: 10em;
+  transition: 0.15s;
+  background-color: white;
+  margin-top: 2em;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.js-color {
+  background-color: #f7e018;
+  animation: bgcolor 2s forwards;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: rgba(255, 255, 255, 0);
+}
+
+.yellow {
+  background-color: #f7e018;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 0;
+  animation: bgcolor 1.5s;
+}
+
+.ap {
+  animation-direction: bgcolor reverse;
+}
+
+@keyframes bgcolor {
+  0% {
+    top: -100vh;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes bgcolor1 {
+  100% {
+    top: -100vw;
+  }
+  0% {
+    top: 0;
+  }
+}
+.btn:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.title:hover {
+  cursor: pointer;
+}
+
+@keyframes wrapper {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.js__describe {
+  width: 100%;
+  animation: 0.5s step-end infinite, printed_text 0.5s steps(20);
+  overflow: hidden;
+}
+
+.js__describe2 {
+  width: 100%;
+  animation: 0.5s step-end infinite, printed_text 0.5s steps(20);
+  overflow: hidden;
+}
+
+.django__describe {
+  width: 100%;
+  animation: 0.5s step-end infinite, printed_text 0.5s steps(20);
+  overflow: hidden;
+}
+
+.tailwind__describe {
+  width: 100%;
+  animation: 0.5s step-end infinite, printed_text 0.5s steps(20);
+  overflow: hidden;
+}
+
+.react {
+  width: 100%;
+  animation: 0.5s step-end infinite, printed_text 0.5s steps(20);
+  overflow: hidden;
+}
+
+@keyframes printed_text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.footer {
+  background-color: black;
+  text-align: center;
+  padding: 2em 0 2em;
+  color: white;
+}/*# sourceMappingURL=style.css.map */

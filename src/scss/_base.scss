@@ -1,0 +1,49 @@
+@use 'fonts';
+
+@mixin link {
+    text-decoration: none;
+    color:black;
+    font-family: 'Source Code Pro';
+    font-style: normal;
+    font-weight: 400;
+}
+html{ 
+    font-family: 'Source Code Pro';
+}
+
+@mixin words-anim{
+    animation:  0.5s step-end infinite, printed_text 0.5s steps(20);
+    overflow: hidden;
+
+}
+
+body{
+    background-color: var(--theme);
+}
+html[data-theme='dark']{
+    --theme:#30393e;
+    p{
+        color:#6690b5;
+        
+    }
+    h1{
+        color:white
+    }
+    a{
+        color:#6690b5;
+    }
+    header{
+        background-color: #222222;
+    }
+}
+html[data-theme='light']{
+    --theme:white;
+}
+/* html[] */
+.section-title{
+    margin-top:0.5em;
+    color: transparent!important;    
+	-webkit-background-clip: text;
+	background-clip: text;
+	background-image: linear-gradient(90deg, rgb(196, 46, 193),rgb(112, 57, 170));
+}
